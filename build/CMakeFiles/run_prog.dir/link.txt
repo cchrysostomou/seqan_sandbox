@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3  -rdynamic CMakeFiles/run_prog.dir/read_io.cpp.o  -o run_prog -lrt -lpthread -lz 
