@@ -1,12 +1,10 @@
-#include <zlib.h>
 #include <seqan/seq_io.h>
-// #include <seqan/stream.h>
+//#include <seqan/stream.h>
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-
     seqan::CharString seqFileName = argv[1]; //"/home/costa/Documents/projects/seqan/test.fq.gz";
     //seqan::CharString seqFileName = "/home/costa/Documents/files/Undetermined_S0_L001_R1_01.fastq.gz";
     std::cout<<seqFileName<<std::endl;
@@ -33,6 +31,7 @@ int main(int argc, char *argv[])
         }
         break;
     }
+    
     //seqan::readRecord(id, seq, seqFileIn);
     //std::cout << id << '\t' << seq << '\n';
     

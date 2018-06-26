@@ -5,14 +5,15 @@ sudo apt-get install libseqan2-dev
 # use this one for ubuntu!
 cmake ../  -DCMAKE_PREFIX_PATH="/usr/share/cmake"  # unnecessary i think => -DSEQAN_INCLUDE_PATH="/usr/include/seqan"
 
-
 # another method - cmake using github after we get an error with make we add pthread to libraries
 cmake ../../seqan/ -DCMAKE_PREFIX_PATH="$HOME/Documents/libraries/seqan/util/cmake/" -DSEQAN_INCLUDE_PATH="$HOME/Documents/libraries/seqan/include/" -DSEQAN_LIBRARIES="pthread;rt;/usr/lib/x86_64-linux-gnu/libz.so"
 make
-
 
 # COMPILING WITHOUT CMAKE (FROM TERMINAL)
 # define zlib to be avialable and used in seqan
 # define path to seqan library
 # include pthreads and other linked libraries
 g++ read_io.cpp -DSEQAN_HAS_ZLIB=1 -I /usr/include/seqan/ -std=c++14 -O3 -W -Wall -pedantic -lz -fopenmp -lpthread -lrt -lbz2
+
+# if we used github (rather than install locally) for example
+g++ read_io.cpp -DSEQAN_HAS_ZLIB=1 -I ../seqan/include/ -std=c++14 -O3 -W -Wall -pedantic -lz -fopenmp -lpthread -lrt -lbz
